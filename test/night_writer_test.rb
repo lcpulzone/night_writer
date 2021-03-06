@@ -8,4 +8,5 @@ class NightWriterTest < Minitest::Test
     night_writer = NightWriter.new
     assert_instance_of NightWriter, night_writer
   end
+
 end
