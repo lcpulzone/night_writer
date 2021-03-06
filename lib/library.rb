@@ -1,16 +1,12 @@
 class Library
-  attr_reader :first_line,
-              :second_line,
-              :third_line
+  attr_reader :basic
 
   def initialize
-    @first_line = first_line
-    @second_line = second_line
-    @third_line = third_line
+    @basic = basic
   end
 
-  def first_lines
-    decade1 = {
+  def lower_case
+    @basic = {
       "a" => ["0.", "..", ".."],
       "b" => ["0.", "0.", ".."],
       "c" => ["00", "..", ".."],
@@ -20,12 +16,7 @@ class Library
       "g" => ["00", "00", ".."],
       "h" => ["0.", "00", ".."],
       "i" => [".0", "0.", ".."],
-      "j" => [".0", "00", ".."]
-    }
-  end
-
-  def second_lines
-    decade2 = {
+      "j" => [".0", "00", ".."],
       "k" => ["0.", "..", "0."],
       "l" => ["0.", "0.", "0."],
       "m" => ["00", "..", "0."],
@@ -35,12 +26,7 @@ class Library
       "q" => ["00", "00", "0."],
       "r" => ["0.", "00", "0."],
       "s" => [".0", "0.", "0."],
-      "t" => [".0", "00", "0."]
-    }
-  end
-
-  def third_lines
-    decade3 = {
+      "t" => [".0", "00", "0."],
       "u" => [".0", "..", "00"],
       "v" => ["0.", "0.", "00"],
       "w" => [".0", "00", ".0"],
@@ -52,10 +38,3 @@ class Library
   end
 
 end
-
-# library = Library.new
-# puts library.first_lines.values
-# puts "~~" * 25
-# puts library.second_lines.values
-# puts "~~" * 25
-# puts library.third_lines.values
