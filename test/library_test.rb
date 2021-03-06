@@ -12,7 +12,7 @@ class LibraryTest < Minitest::Test
   def test_it_has_decades
     library = Library.new
 
-    expected = decade1 = {
+    expected = @basic = {
       "a" => ["0.", "..", ".."],
       "b" => ["0.", "0.", ".."],
       "c" => ["00", "..", ".."],
@@ -22,12 +22,7 @@ class LibraryTest < Minitest::Test
       "g" => ["00", "00", ".."],
       "h" => ["0.", "00", ".."],
       "i" => [".0", "0.", ".."],
-      "j" => [".0", "00", ".."]
-    }
-
-    assert_equal expected, library.first_lines
-
-    expected = decade2 = {
+      "j" => [".0", "00", ".."],
       "k" => ["0.", "..", "0."],
       "l" => ["0.", "0.", "0."],
       "m" => ["00", "..", "0."],
@@ -37,12 +32,7 @@ class LibraryTest < Minitest::Test
       "q" => ["00", "00", "0."],
       "r" => ["0.", "00", "0."],
       "s" => [".0", "0.", "0."],
-      "t" => [".0", "00", "0."]
-    }
-
-    assert_equal expected, library.second_lines
-
-    expected = decade3 = {
+      "t" => [".0", "00", "0."],
       "u" => [".0", "..", "00"],
       "v" => ["0.", "0.", "00"],
       "w" => [".0", "00", ".0"],
@@ -52,7 +42,7 @@ class LibraryTest < Minitest::Test
       " " => ["..", "..", ".."]
     }
 
-    assert_equal expected, library.third_lines
+    assert_equal expected, library.lower_case
   end
 
 end
