@@ -37,4 +37,15 @@ class Library
     }
   end
 
+
+
+  # def compare(letter)
+  #   letter = "a"
+  #   unless @basic.key?(letter)
+  #     puts "no match"
+  #   else
+  #     puts "id: #{@basic[letter]}"
+  #   end
+  # end
+
 end
