@@ -42,11 +42,6 @@ class LibraryTest < Minitest::Test
       " " => ["..", "..", ".."]
     }
 
-    assert_equal expected, library.lower_case
+    assert_equal expected, @basic
   end
-
-  # def test_it_can_look_up
-  #   library = Library.new
-  #   assert_equal "no match", library.compare("a")
-  # end
 end
