@@ -2,10 +2,6 @@ class Library
   attr_reader :basic
 
   def initialize
-    @basic = basic
-  end
-
-  def lower_case
     @basic = {
       "a" => ["0.", "..", ".."],
       "b" => ["0.", "0.", ".."],
@@ -36,16 +32,5 @@ class Library
       " " => ["..", "..", ".."]
     }
   end
-
-
-
-  # def compare(letter)
-  #   letter = "a"
-  #   unless @basic.key?(letter)
-  #     puts "no match"
-  #   else
-  #     puts "id: #{@basic[letter]}"
-  #   end
-  # end
 
 end
