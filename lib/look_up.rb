@@ -8,11 +8,10 @@ class LookUp
   end
 
   def translate(string)
-    # bucket = []
     string.split("").map do |letter|
       library.basic[letter]
     end
-    # bucket
   end
 
+  
 end
