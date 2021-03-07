@@ -8,4 +8,10 @@ class LookUpTest < Minitest::Test
     look_up = LookUp.new
     assert_instance_of LookUp, look_up
   end
+
+  def test_it_can_compare
+    look_up = LookUp.new
+
+    assert_equal [["0.", "..", ".."]], look_up.translate("a")
+  end
 end

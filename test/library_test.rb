@@ -13,6 +13,7 @@ class LibraryTest < Minitest::Test
     library = Library.new
 
     expected = @basic = {
+      
       "a" => ["0.", "..", ".."],
       "b" => ["0.", "0.", ".."],
       "c" => ["00", "..", ".."],
