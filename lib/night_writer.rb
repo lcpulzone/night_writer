@@ -1,10 +1,17 @@
+require './lib/library'
+require './lib/look_up'
+
 class NightWriter
   attr_reader :input,
-              :output
+              :output,
+              :library,
+              :look_up
 
   def initialize()
     @input = ARGV[0]
     @output = ARGV[1]
+    @library = Library.new
+    @look_up = LookUp.new
   end
 
   def first_message
@@ -12,7 +19,7 @@ class NightWriter
   end
 
   def write_message_to_file
-    second_message = first_message.replace("Oh no, the computer is starting to smoke...")
+    second_message = first_message.replace(look_up.translate(first_message).to_s)
     File.open(output, "w") do |file|
       file.write(second_message)
     end
@@ -20,12 +27,11 @@ class NightWriter
     puts "- " * 25
     puts first_message
     puts "- " * 25
-    puts second_message.replace("Oh no, the computer is starting to smoke...")
+    puts second_message
   end
 
 end
-puts NightWriter.new.write_message_to_file
-# nr = NightWriter.new.read_message
+nr = NightWriter.new.write_message_to_file
 
 
 
