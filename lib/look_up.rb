@@ -17,4 +17,11 @@ class LookUp
     line1 = translate(string).slice(0)
   end
 
+  def line_two(string)
+    line2 = translate(string).slice(1)
+  end
+
+  def line_three(string)
+    line_3 = translate(string).slice(2)
+  end
 end
