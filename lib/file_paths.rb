@@ -23,7 +23,9 @@ attr_reader :input,
     File.open(output, "w") do |file|
       file.write(second_message)
     end
-    puts "Created '#{output}' containing #{second_message.size} characters"
+      if ARGV.length == 2 && input == 'message.txt'
+        puts "Created '#{output}' containing #{second_message.size} characters"
+      end
     puts "- " * 25
     puts first_message
     puts "- " * 25
