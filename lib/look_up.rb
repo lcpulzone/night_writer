@@ -10,18 +10,24 @@ class LookUp
   def translate(string)
     string.split("").map do |letter|
       library.basic[letter]
-    end.flatten
+    end
   end
 
   def line_one(string)
-    line1 = translate(string).slice(0)
+    line1 = translate(string).map do |string|
+      string[0]
+    end.join
   end
 
   def line_two(string)
-    line2 = translate(string).slice(1)
+    line2 = translate(string).map do |string|
+      string[1]
+    end.join
   end
 
   def line_three(string)
-    line_3 = translate(string).slice(2)
+    line_3 = translate(string).map do |string|
+      string[2]
+    end.join
   end
 end
