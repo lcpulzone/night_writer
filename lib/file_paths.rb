@@ -15,11 +15,14 @@ attr_reader :input,
   end
 
   def first_message
-    file = File.open(input).read
+    File.open(input, "r+") do |file|
+      file.read
+    end
   end
 
   def write_message_to_file
-    second_message = look_up.translate(first_message).join
+    second_message = look_up.stack("what")
+    # second_message = look_up.translate(first_message).join
     File.open(output, "w") do |file|
       file.write(second_message)
     end
@@ -29,5 +32,4 @@ attr_reader :input,
     puts "- " * 25
     p second_message
   end
-
 end
