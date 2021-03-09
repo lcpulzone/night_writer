@@ -21,4 +21,9 @@ class LookUpTest < Minitest::Test
     assert_equal "..", look_up.line_two("a")
     assert_equal "..", look_up.line_three("a")
   end
+
+  def test_it_can_stack
+    look_up = LookUp.new
+    assert_equal "0.\n..\n..\n", look_up.stack("a")
+  end
 end
