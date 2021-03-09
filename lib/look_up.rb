@@ -30,4 +30,8 @@ class LookUp
       string[2]
     end.join
   end
+
+  def stack(string)
+    line_one(string) + "\n" + line_two(string) + "\n" + line_three(string) + "\n"
+  end
 end
