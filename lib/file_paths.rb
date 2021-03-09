@@ -1,28 +1,25 @@
-require './lib/library'
 require './lib/look_up'
 
 class FilePaths
 attr_reader :input,
             :output,
-            :library,
             :look_up
 
   def initialize()
     @input = ARGV[0]
     @output = ARGV[1]
-    @library = Library.new
     @look_up = LookUp.new
   end
 
   def first_message
-    File.open(input, "r+") do |file|
+    File.open(input, "r") do |file|
       file.read
     end
   end
 
   def write_message_to_file
-    second_message = look_up.stack(first_message)
-    # second_message = look_up.translate(first_message).join
+    # second_message = look_up.stack("what")
+    second_message = look_up.translate(first_message).join
     File.open(output, "w") do |file|
       file.write(second_message)
     end
@@ -32,4 +29,5 @@ attr_reader :input,
     puts "- " * 25
     p second_message
   end
+
 end
