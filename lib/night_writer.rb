@@ -1,18 +1,15 @@
-require './lib/library'
 require './lib/look_up'
 require './lib/file_paths'
 
 class NightWriter
   attr_reader :input,
               :output,
-              :library,
               :look_up,
               :file_paths
 
   def initialize()
     @input = ARGV[0]
     @output = ARGV[1]
-    @library = Library.new
     @look_up = LookUp.new
     @file_paths = FilePaths.new
   end
